@@ -57,8 +57,6 @@
     
     <h1>Następny cwel tygodnia za:</h1>
     <div id="countdown">Ładowanie...</div>
-    <h2 id="clickCounter">Liczba osób, które scweliły: 0</h2>
-    <button id="addButton">Kliknij mnie</button>
     <div id="userIP">Ładowanie IP...</div>
 
     <script>
@@ -85,15 +83,6 @@
             document.getElementById('countdown').textContent = countdown;
         }
 
-        // Obsługa przycisku
-        document.getElementById('addButton').addEventListener('click', () => {
-            if (!buttonClicked) {
-                buttonClicked = true;
-                clickCount++;
-                document.getElementById('clickCounter').textContent = `Liczba osób, które scweliły: ${clickCount}`;
-                document.getElementById('addButton').disabled = true;
-            }
-        });
 
         // Pobranie IP użytkownika
         async function fetchUserIP() {

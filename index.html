@@ -1,13 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cweltygodnia.pl</title>
+    <title>cweltygodnia.pl \\ hehe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        #countdown {
+            font-size: 1.5rem;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
     <h1 style="text-align: center;"><strong>CWEL TYGODNIA</strong></h1>
-    <p><strong><img style="display: block; margin-left: auto; margin-right: auto;" src="https://media.discordapp.net/attachments/695703715037970442/1315427178376335381/image.png?ex=67575e86&amp;is=67560d06&amp;hm=ca3aa4b8d5f5e47abd8602931723bc6e21e4303c77be8eb745d0a6fca6176ffc&amp;=&amp;format=webp&amp;quality=lossless&amp;width=667&amp;height=671" alt="" /></strong></p>
+    <p><strong><img style="display: block; margin-left: auto; margin-right: auto;" src="https://i.ibb.co/hcsL6xP/image.png" alt="" /></strong></p>
     
+    <h1>Następny cwel tygodnia za:</h1>
+    <div id="countdown">Ładowanie...</div>
+
+    <script>
+        function updateCountdown() {
+            const now = new Date();
+            const nextMonday = new Date(now);
+
+            // Ustaw na następny poniedziałek
+            nextMonday.setDate(now.getDate() + ((1 - now.getDay() + 7) % 7 || 7));
+            nextMonday.setHours(0, 0, 0, 0);
+
+            const diff = nextMonday - now;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            const countdown = `${days} dni, ${hours} godzin, ${minutes} minut, ${seconds} sekund`;
+            document.getElementById('countdown').textContent = countdown;
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
 </body>
 </html>

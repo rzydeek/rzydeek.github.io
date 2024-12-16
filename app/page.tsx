@@ -12,7 +12,6 @@ export default function Home() {
       <div className="px-24 flex items-center flex-col justify-center my-6"> 
 
       <div className="h-auto w-80 sm:w-[28rem] bg-czerw/75 items-center justify-center flex flex-col p-2">
-          <p>strona spąnsorowana przez:</p>
           <a className="mt-2" href="https://phantom.best/" target="_blank" rel="noopener noreferrer"><Image src='/standard.gif' unoptimized={true} alt='phantom' width={512} height={256}></Image></a>
         </div>
 

@@ -4,10 +4,9 @@ import { useEffect, useState } from "react";
 
 export default function Odliczanie() {
   const [countdown, setCountdown] = useState<string>("");
-  const [ip, setIp] = useState<string>("");
 
   useEffect(() => {
-    let extraTime = 0;
+    const extraTime = 0;
 
     function updateCountdown() {
       const now = new Date();
@@ -27,23 +26,8 @@ export default function Odliczanie() {
       setCountdown(`${days} dni, ${hours} godzin, ${minutes} minut, ${seconds} sekund`);
     }
 
-    async function fetchIP() {
-      try {
-        const response = await fetch("https://api.ipify.org?format=json");
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        setIp(`Twoje IP: ${data.ip}`);
-      } catch (error) {
-        setIp("Nie udało się pobrać IP.");
-        console.error(error);
-      }
-    }
-
     updateCountdown();
     const intervalId = setInterval(updateCountdown, 1000);
-    fetchIP();
 
     return () => clearInterval(intervalId); // Usuń licznik, gdy komponent zostanie odmontowany
   }, []);

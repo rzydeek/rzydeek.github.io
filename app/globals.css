@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-image: url('/tlo.gif');
+  font-family: serif;
+  color: #ffffff;
+  cursor: url('/cursor.cur'), auto;
+
+
+}
+
+
+
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: purple;
+}

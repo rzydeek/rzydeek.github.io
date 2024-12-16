@@ -12,7 +12,6 @@ export default function Odliczanie() {
       const now = new Date();
       const nextMonday = new Date(now);
 
-      // Ustaw na następny poniedziałek
       nextMonday.setDate(now.getDate() + ((1 - now.getDay() + 7) % 7 || 7));
       nextMonday.setHours(0, 0, 0, 0);
 
@@ -29,7 +28,7 @@ export default function Odliczanie() {
     updateCountdown();
     const intervalId = setInterval(updateCountdown, 1000);
 
-    return () => clearInterval(intervalId); // Usuń licznik, gdy komponent zostanie odmontowany
+    return () => clearInterval(intervalId);
   }, []);
 
   return (

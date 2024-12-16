@@ -13,7 +13,7 @@ const nextConfig = {
    * @see https://nextjs.org/docs/app/api-reference/next-config-js/basePath
    */
     output: 'export',
-    basePath: process.env.NODE_ENV === 'production' ? '/nextjsmarketplace' : ''
+    basePath: process.env.NODE_ENV === 'production' ? '/nextjsmarketplace' : '',
 
   /**
    * Disable server-based image optimization. Next.js does not support

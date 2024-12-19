@@ -17,7 +17,7 @@ export default function Home() {
 
         <div className="h-auto w-80 sm:w-[28rem] bg-czerw/75 items-center justify-center flex flex-col p-8 mt-4">      {/* glowny div */}
           <h1 className="font-bold text-3xl underline ">Cweltygodnia.pl</h1>
-          <img src='https://i.ibb.co/rFXv8Sh/image.png' alt="huj" className="my-8"></img>
+          <img src='https://i.ibb.co/jR0QgDC/image.png' alt="huj" className="my-8"></img>
           <Odliczanie/>
         </div>
 
